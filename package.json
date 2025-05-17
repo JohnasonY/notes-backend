@@ -5,13 +5,18 @@
   "scripts": {
     "start": "node index.js",
     "test": "echo \\\"Error: no test specified\\\" && exit 1",
-    "dev": "node --watch index.js"
+    "dev": "node --watch index.js",
+    "build:ui": "rimraf dist && cd ../notes/part2-notes-frontend && npm run build && xcopy /E /I /Y dist ..\\..\\backend\\dist"
   },
   "author": "Jax",
   "license": "MIT",
   "description": "",
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^5.1.0"
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.14.3"
+  },
+  "devDependencies": {
+    "rimraf": "^6.0.1"
   }
 }
